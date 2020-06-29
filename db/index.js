@@ -11,7 +11,7 @@ let groceriesSchema = mongoose.Schema({
   name: String,
   category: String,
   amount: Number,
-  inCart: Boolean,
+  inCart: { type: Boolean, default: false },
 });
 
 let Groceries = mongoose.model('Groceries', groceriesSchema);
