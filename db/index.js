@@ -1,0 +1,19 @@
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/grocery-list-practice', {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+});
+
+const connection = mongoose.connection;
+connection.once('open', () => console.log('Judging your groceries...'));
+
+let groceriesSchema = mongoose.Schema({
+  name: String,
+  category: String,
+  amount: Number,
+  inCart: Boolean,
+});
+
+let Groceries = mongoose.model('Groceries', groceriesSchema);
+
+module.exports = { Groceries };

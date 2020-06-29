@@ -1,4 +1,5 @@
 const express = require('express');
+const db = require('../db');
 
 // middleware
 const bodyParser = require('body-parser');
