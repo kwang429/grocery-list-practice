@@ -28,6 +28,15 @@ app.get('/getAll', (req, res) => {
     })
     .catch((err) => {
       console.log(`err in app.get ${err}`);
-      res.status(404).send(err);
+      res.status(404).send(`Err in app.get: ${err}`);
     });
+});
+
+app.delete('/deleteOne', ({ body }, res) => {
+  dbHelpers
+    .deleteOne(body.name)
+    .then(() => {
+      res.status(200).send(`Removed ${body.name} from grocery list`);
+    })
+    .catch(() => res.status(404).send(`Err in app.delete: ${err}`));
 });

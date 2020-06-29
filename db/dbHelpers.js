@@ -12,4 +12,15 @@ module.exports = {
       });
     });
   },
+  deleteOne: function (grocery) {
+    return new Promise((resolve, reject) => {
+      groceries.deleteOne({ name: `${grocery}` }, (err, data) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(data);
+        }
+      });
+    });
+  },
 };
