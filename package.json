@@ -1,0 +1,31 @@
+{
+  "name": "grocery-list-practice",
+  "version": "1.0.0",
+  "description": "Quick CRUD app practice",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "babel": "^6.23.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "pg": "^8.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwang429/grocery-list-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kwang429/grocery-list-practice/issues"
+  },
+  "homepage": "https://github.com/kwang429/grocery-list-practice#readme"
+}
