@@ -10,7 +10,7 @@ connection.once('open', () => console.log('Judging your groceries...'));
 let groceriesSchema = mongoose.Schema({
   name: String,
   category: String,
-  amount: Number,
+  qty: Number,
   inCart: { type: Boolean, default: false },
 });
 

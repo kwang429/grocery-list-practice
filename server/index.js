@@ -1,5 +1,5 @@
 const express = require('express');
-const db = require('../db');
+const dbHelpers = require('../db/dbHelpers.js');
 
 // middleware
 const bodyParser = require('body-parser');
@@ -17,3 +17,17 @@ app.use('/', express.static(path.join(__dirname, '../client/dist/')));
 const port = 3000;
 
 app.listen(port, () => console.log(`Jotting down groceries on port ${port}`));
+
+/*-- API CALLS --*/
+app.get('/getAll', (req, res) => {
+  dbHelpers
+    .getAll()
+    .then((docs) => {
+      console.log('hello from app.get');
+      res.status(200).send(docs);
+    })
+    .catch((err) => {
+      console.log(`err in app.get ${err}`);
+      res.status(404).send(err);
+    });
+});
